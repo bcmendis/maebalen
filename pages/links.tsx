@@ -11,7 +11,7 @@ import {
 import { HiOutlineMail } from "react-icons/hi";
 import { MdOutlineWeb } from "react-icons/md";
 
-const maebae = require("../assets/maebae.png");
+const maebae = require("../assets/MaeBae.png");
 
 const links = [
   {
