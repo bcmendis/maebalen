@@ -1,7 +1,8 @@
 import Head from "next/head";
 import Image from "next/image";
 import { motion } from "framer-motion";
-const badass = require("../assets/Headshot_Badass.jpg") ;
+const badass = require("../assets/Headshot_Badass.jpg");
+const sweet = require("../assets/Headshot_Sweet.jpg");
 
 export default function Home() {
   return (
@@ -15,8 +16,8 @@ export default function Home() {
       <main className="flex flex-col justify-center items-center py-20 h-screen w-full">
         <motion.div className="h-full rounded-lg overflow-hidden shadow-xl shadow-gray-800">
           <Image
-            src={badass}
-            alt="badass"
+            src={sweet}
+            alt="sweet"
             className="object-cover w-full h-full"
           />
         </motion.div>
