@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import badass from "../assets/Headshot_Badass.jpg";
+const badass = require("../assets/Headshot_Badass.jpg") ;
 
 export default function Home() {
   return (
