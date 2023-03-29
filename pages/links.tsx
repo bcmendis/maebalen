@@ -60,27 +60,31 @@ const links = [
 
 const LinksPage = () => {
   return (
-    <div className="flex flex-col items-center sm:justify-center p-5 w-full h-full bg-slate-300 text-black">
-      <div className="flex flex-col items-center w-[90%] sm:w-[70%] p-5 sm:justify-center sm:flex-row bg-white rounded-b-3xl rounded-t-[300px] space-y-5 sm:space-y-0 sm:rounded-lg">
-        <Image
-          src={maebae}
-          alt="maebae"
-          priority
-          className="w-full max-w-[200px] rounded-full"
-        />
-        <div className="flex flex-col text-center text-slate-700 p-2 sm:p-5 text-sm sm:text-xl space-y-3">
-          <h1 className="text-2xl">Hey I’m Mae!</h1>
-          <p>I’m a voice actor and content creator! Check out my socials!</p>
-        </div>
-        {links.map((link, index) => (
-          <Links
-            key={index}
-            IconComponent={link.icon}
-            text={link.text}
-            color={link.color}
-            link={link.url}
+    <div className="flex flex-col items-center sm:justify-center p-5 w-full min-h-screen bg-slate-300 text-black">
+      <div className="flex flex-col items-center w-[90%] sm:w-[70%] p-8 justify-center bg-white rounded-b-3xl rounded-t-[300px] sm:rounded-xl sm:rounded-tl-[9rem] shadow-lg gap-2 sm:gap-10">
+        <div className="flex flex-col w-full sm:flex-row items-center gap-2 sm:gap-3">
+          <Image
+            src={maebae}
+            alt="maebae"
+            priority
+            className="w-full max-w-[200px] rounded-full"
           />
-        ))}
+          <div className="flex flex-col text-center text-slate-700 p-2 sm:p-5 text-sm sm:text-xl space-y-3">
+            <h1 className="text-2xl">Hey I’m Mae!</h1>
+            <p>I’m a voice actor and content creator! Check out my socials!</p>
+          </div>
+        </div>
+        <div className="flex flex-col justify-center items-center w-full gap-3 sm:gap-5 sm:flex-row sm:flex-wrap">
+          {links.map((link, index) => (
+            <Links
+              key={index}
+              IconComponent={link.icon}
+              text={link.text}
+              color={link.color}
+              link={link.url}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );
