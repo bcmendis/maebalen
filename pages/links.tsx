@@ -1,4 +1,5 @@
 import Links from "@/components/linksPage/Links";
+import { motion as m } from "framer-motion";
 import Image from "next/image";
 import React from "react";
 import {
@@ -57,23 +58,86 @@ const links = [
     text: "Paypal me!",
   },
 ];
+const slideUp = {
+  hidden: {
+    y: "100vh",
+    opacity: 0,
+  },
+  visible: {
+    y: "0",
+    opacity: 1,
+    transition: {
+      duration: 0.1,
+      type: "spring",
+      damping: 25,
+      stiffness: 500,
+      scrollTo: "top",
+      when: "beforeChildren",
+    },
+  },
+  exit: {
+    y: "-100vh",
+    opacity: 0,
+  },
+};
+
+const profilePhoto = {
+  hidden: {
+    y: "100vh",
+    opacity: 0,
+  },
+  visible: {
+    y: "0",
+    opacity: 1,
+    transition: {
+      duration: 0.1,
+      type: "spring",
+      damping: 23,
+      stiffness: 500,
+      scrollTo: "top",
+      when: "",
+    },
+  },
+  exit: {
+    y: "-100vh",
+    opacity: 0,
+  },
+};
 
 const LinksPage = () => {
   return (
     <div className="flex flex-col items-center sm:justify-center p-5 w-full min-h-screen bg-slate-300 text-black">
-      <div className="flex flex-col items-center w-[90%] sm:w-[70%] p-8 justify-center bg-white rounded-b-3xl rounded-t-[20rem] sm:rounded-xl sm:rounded-t-[9rem] shadow-lg gap-2 sm:gap-10">
-        <div className="flex flex-col w-full sm:flex-row items-center gap-2 sm:gap-3">
-          <Image
-            src={maebae}
-            alt="maebae"
-            priority
-            className="w-full max-w-[200px] rounded-full"
-          />
-          <div className="flex flex-col sm:w-full text-center text-slate-700 p-2 sm:p-5 text-sm sm:text-xl space-y-3">
-            <h1 className="text-2xl">Hey I’m Mae!</h1>
+      <m.div
+        initial="hidden"
+        animate="visible"
+        exit="exit"
+        variants={slideUp}
+        className="flex flex-col items-center w-[90%] lg:w-[70%] p-8 justify-center bg-white rounded-b-3xl rounded-t-[20rem] sm:rounded-xl sm:rounded-t-[9rem] shadow-lg gap-2 sm:gap-10"
+      >
+        <m.div
+          initial="hidden"
+          animate="visible"
+          exit="exit"
+          variants={profilePhoto}
+          className="flex flex-col w-full sm:flex-row items-center gap-2 sm:gap-3"
+        >
+          <m.div
+            whileHover={{
+              y: -10,
+            }}
+          >
+            <Image
+              src={maebae}
+              alt="maebae"
+              priority
+              className="w-full max-w-[300px] sm:max-w-[250px] lg:max-w-[350px] rounded-full"
+            />
+          </m.div>
+          <div className="flex flex-col sm:w-full text-center text-slate-700 p-2 sm:p-5 text-lg sm:text-2xl lg:text-3xl gap-3 sm:gap-10">
+            <h1 className="text-3xl lg:text-5xl font-semibold">Hey I’m Mae!</h1>
             <p>I’m a voice actor and content creator! Check out my socials!</p>
           </div>
-        </div>
+        </m.div>
         <div className="flex flex-col justify-center items-center w-full gap-3 sm:gap-5 sm:flex-row sm:flex-wrap">
           {links.map((link, index) => (
             <Links
@@ -85,7 +149,7 @@ const LinksPage = () => {
             />
           ))}
         </div>
-      </div>
+      </m.div>
     </div>
   );
 };

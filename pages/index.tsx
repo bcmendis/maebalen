@@ -1,8 +1,11 @@
 import Head from "next/head";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion as m } from "framer-motion";
 const badass = require("../assets/Headshot_Badass.jpg");
 const sweet = require("../assets/Headshot_Sweet.jpg");
+const edgy = require("../assets/Headshot_Edgy.jpg");
+
+const headshots = [badass, sweet, edgy];
 
 export default function Home() {
   return (
@@ -13,14 +16,21 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="flex flex-col justify-center items-center py-20 h-screen w-full">
-        <motion.div className="h-full rounded-lg overflow-hidden shadow-xl shadow-gray-800">
-          <Image
-            src={sweet}
-            alt="sweet"
-            className="object-cover w-full h-full"
-          />
-        </motion.div>
+      <main className="flex flex-col justify-center items-center py-20 h-screen w-screen">
+        <div className="h-full flex rounded-lg overflow-x-hidden shadow-xl shadow-gray-800">
+          {headshots.map((photo, index) => {
+            return (
+              <m.div key={index} className="flex ">
+                <Image
+                  src={photo}
+                  alt="sweet"
+                  priority
+                  className="object-cover w-full h-full"
+                />
+              </m.div>
+            );
+          })}
+        </div>
       </main>
     </>
   );
