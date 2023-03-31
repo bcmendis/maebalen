@@ -23,7 +23,6 @@ const slideUp = {
       damping: 25,
       stiffness: 500,
       scrollTo: "top",
-      when: "beforeChildren",
     },
   },
   exit: {
@@ -34,22 +33,25 @@ const slideUp = {
 
 const Links: React.FC<LinkType> = ({ IconComponent, color, text, link }) => {
   return (
-    <m.div
-      whileHover={{ scale: 1.05 }}
-      whileTap={{ scale: 0.9 }}
-      variants={slideUp}
-      initial="hidden"
-      animate="visible"
-      exit="exit"
-      className="flex justify-center items-center py-2 px-3 sm:py-4 sm:px-6 bg-slate-200 rounded-lg w-full sm:w-[40%] sm:min-h-[100px] text-lg sm:text-2xl"
+    <Link
+      href={link}
+      className="flex flex-1 justify-center items-center w-full sm:min-w-[300px]"
     >
-      <Link href={link} className="flex justify-center items-center w-full">
+      <m.div
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.9 }}
+        variants={slideUp}
+        initial="hidden"
+        animate="visible"
+        exit="exit"
+        className="flex justify-center items-center px-3 py-2 sm:p-3 bg-slate-200 rounded-lg w-full h-full text-lg sm:text-lg"
+      >
         <IconComponent
-          className={`w-[25px] h-[25px] sm:w-[40px] sm:h-[40px] lg:w-[50px] lg:h-[50px] min-w-[10px] min-h-[10px] ${color}`}
+          className={`w-[25px] h-[25px] sm:w-[40px] sm:h-[40px] lg:w-[50px] lg:h-[30px] min-w-[10px] min-h-[10px] ${color}`}
         />
-        <span className="flex-1 text-center p-1">{text}</span>
-      </Link>
-    </m.div>
+        <span className="flex-1 text-center p-1 pl-2">{text}</span>
+      </m.div>
+    </Link>
   );
 };
 

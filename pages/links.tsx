@@ -35,7 +35,7 @@ const links = [
   },
   {
     icon: MdOutlineWeb,
-    url: "https://maebelen.com",
+    url: "http://localhost:3000",
     color: "text-slate-700",
     text: "Acting Resumes",
   },
@@ -67,6 +67,7 @@ const slideUp = {
     y: "0",
     opacity: 1,
     transition: {
+      delay: 0.5,
       duration: 0.1,
       type: "spring",
       damping: 25,
@@ -138,7 +139,7 @@ const LinksPage = () => {
             <p>I’m a voice actor and content creator! Check out my socials!</p>
           </div>
         </m.div>
-        <div className="flex flex-col justify-center items-center w-full gap-3 sm:gap-5 sm:flex-row sm:flex-wrap">
+        <div className="flex flex-col justify-center items-center h-full w-full sm:px-5 gap-3 sm:gap-y-4 sm:gap-x-5 sm:flex-row sm:flex-wrap">
           {links.map((link, index) => (
             <Links
               key={index}

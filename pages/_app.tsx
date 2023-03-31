@@ -1,15 +1,31 @@
 import "@/styles/globals.css";
 import type { AppProps } from "next/app";
-import { AnimatePresence } from "framer-motion";
-import Router from "next/router";
-const router = Router;
+import { motion as m, AnimatePresence } from "framer-motion";
+import { useRouter } from "next/router";
 
-export default function App({ Component, pageProps, router }: AppProps) {
+const allPagesVariant = {
+  initial: { opacity: 0 },
+  animate: {
+    opacity: 1,
+    transition: { duration: 0.5 },
+  },
+  exit: { opacity: 0, when: "afterChildren" },
+};
+
+export default function App({ Component, pageProps }: AppProps) {
+  const router = useRouter();
   return (
     <AnimatePresence mode="wait" onExitComplete={() => window.scrollTo(0, 0)}>
-      <div className="flex w-screen min-h-screen">
-        <Component {...pageProps} key={router.asPath} />
-      </div>
+      <m.div
+        initial="initial"
+        animate="animate"
+        exit="exit"
+        variants={allPagesVariant}
+        key={router.route}
+        className="flex w-screen min-h-screen"
+      >
+        <Component {...pageProps} />
+      </m.div>
     </AnimatePresence>
   );
 }

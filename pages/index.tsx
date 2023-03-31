@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
+import Link from "next/link";
 import { motion as m } from "framer-motion";
 const badass = require("../assets/Headshot_Badass.jpg");
 const sweet = require("../assets/Headshot_Sweet.jpg");
@@ -17,6 +18,9 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="flex flex-col justify-center items-center py-20 h-screen w-screen">
+        <Link href="/links" className="flex p-4 text-white">
+          Links
+        </Link>
         <div className="h-full flex rounded-lg overflow-x-hidden shadow-xl shadow-gray-800">
           {headshots.map((photo, index) => {
             return (
