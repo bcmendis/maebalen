@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { motion as m } from "framer-motion";
 
+const bg = require("../assets/hero/image2.jpeg");
 const logo = require("../assets/logo/image1.svg");
 const roto = require("../assets/hero/roto.png");
 
@@ -69,7 +70,7 @@ const Hero = () => {
         variants={bgScale}
         initial="normal"
         animate="visible"
-        className="min-w-[280px] flex justify-center items-start absolute top-0 right-0 left-0 bottom-0  w-full h-screen bg-fixed bg-cover bg-hero bg-top mt-100 overflow-hidden"
+        className={`min-w-[280px] flex justify-center items-start absolute top-0 right-0 left-0 bottom-0 w-full h-screen bg-fixed bg-cover bg-hero bg-top mt-100 overflow-hidden`}
       >
         {/* Overlay */}
         <m.div className="min-w-[280px] absolute top-0 right-0 left-0 bottom-0 w-full h-screen z-[1] bg-pink-400/10" />

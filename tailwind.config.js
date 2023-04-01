@@ -17,7 +17,7 @@ module.exports = {
         raleway: ["Raleway", "sans-serif"],
       },
       backgroundImage: {
-        hero: "url('../assets/hero/image2.jpeg')",
+        hero: "url('/images/hero.jpeg')",
       },
     },
   },
