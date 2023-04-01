@@ -3,7 +3,7 @@ import { motion as m } from "framer-motion";
 
 const bg = require("../assets/hero/image2.jpeg");
 const logo = require("../assets/logo/image1.svg");
-const roto = require("../assets/hero/roto.png");
+const roto = require("../assets/hero/rotoCrop.png");
 
 const bgScale = {
   normal: {
@@ -44,12 +44,12 @@ const signature = {
 const slideUp = {
   hidden: {
     y: "100vh",
-    x: "-100px",
+    x: "0",
     opacity: 0,
   },
   visible: {
     y: "0",
-    x: "-100px",
+    x: "0",
     opacity: 1,
     transition: {
       delay: 3,
@@ -65,7 +65,7 @@ const slideUp = {
 
 const Hero = () => {
   return (
-    <div className="min-w-[280px] flex justify-center items-start absolute top-0 right-0 left-0 bottom-0 overflow-hidden">
+    <div className="min-w-[280px] flex justify-center items-center absolute top-0 right-0 left-0 bottom-0 overflow-hidden">
       <m.div
         variants={bgScale}
         initial="normal"
@@ -76,12 +76,12 @@ const Hero = () => {
         <m.div className="min-w-[280px] absolute top-0 right-0 left-0 bottom-0 w-full h-screen z-[1] bg-pink-400/10" />
       </m.div>
       {/* Assets */}
-      <div className="flex flex-col w-full justify-center items-center">
+      <div className="flex flex-col justify-center items-center h-full w-full  z-[2]">
         <m.div
           variants={signature}
           initial="visible"
           animate="hidden"
-          className="flex w-full sm:min-w-[1000px] justify-center items-center z-[2]"
+          className="flex w-full sm:min-w-[1000px] justify-center items-center "
         >
           <Image
             src={logo}
@@ -93,12 +93,12 @@ const Hero = () => {
           variants={slideUp}
           initial="hidden"
           animate="visible"
-          className="mt-10"
+          className="flex justify-center items-center h-full w-full"
         >
           <Image
             src={roto}
-            alt="logo"
-            className="w-full min-w-[1050px] z-[2]"
+            alt="roto"
+            className=" h-full w-auto max-width-[1000px] min-w-[400px] absolute top-[50px]"
           />
         </m.div>
       </div>
