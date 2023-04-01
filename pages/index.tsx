@@ -19,9 +19,9 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="flex flex-col w-full h-full items-center justify-start text-black overflow-auto">
-        <Link href="/links" className="flex p-4 text-white bg-blue-500">
+        {/* <Link href="/links" className="flex p-4 text-white bg-blue-500">
           Links
-        </Link>
+        </Link> */}
         {/* <div className="h-full flex rounded-lg overflow-x-hidden shadow-xl shadow-gray-800">
           {headshots.map((photo, index) => {
             return (

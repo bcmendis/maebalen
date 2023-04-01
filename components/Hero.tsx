@@ -28,7 +28,7 @@ const signature = {
     opacity: 1,
   },
   hidden: {
-    opacity: 1,
+    opacity: 0,
     transition: {
       delay: 3,
       duration: 0.5,
@@ -49,7 +49,7 @@ const slideUp = {
   visible: {
     y: "0",
     x: "-100px",
-    opacity: 0,
+    opacity: 1,
     transition: {
       delay: 3,
       duration: 0.5,
@@ -85,7 +85,7 @@ const Hero = () => {
           <Image
             src={logo}
             alt="logo"
-            className="min-w-[50px] max-w-[300px] sm:max-w-[400px] md:max-w-[450px] lg:max-w-[500px] absolute top-[60px]"
+            className="min-w-[50px] max-w-[300px] sm:max-w-[400px] md:max-w-[450px] lg:max-w-[500px] absolute top-[50px]"
           />
         </m.div>
         <m.div
