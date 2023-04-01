@@ -6,7 +6,20 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        primary: "#8EC344",
+        secondary: "#125E33",
+        dark: "#092F19",
+      },
+      fontFamily: {
+        poppins: ["Poppins", "sans-serif"],
+        raleway: ["Raleway", "sans-serif"],
+      },
+      backgroundImage: {
+        hero: "url('../assets/hero/image2.jpeg')",
+      },
+    },
   },
   plugins: [],
 };

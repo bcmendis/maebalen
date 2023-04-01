@@ -22,7 +22,7 @@ export default function App({ Component, pageProps }: AppProps) {
         exit="exit"
         variants={allPagesVariant}
         key={router.route}
-        className="flex w-screen min-h-screen"
+        className="flex max-w-screen min-h-screen overflow-hidden"
       >
         <Component {...pageProps} />
       </m.div>

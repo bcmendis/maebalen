@@ -35,7 +35,7 @@ const Links: React.FC<LinkType> = ({ IconComponent, color, text, link }) => {
   return (
     <Link
       href={link}
-      className="flex flex-1 justify-center items-center w-full sm:min-w-[300px]"
+      className="flex flex-1 justify-center items-center w-full sm:min-w-[200px] md:min-w-[250px] lg:min-w-[350px]"
     >
       <m.div
         whileHover={{ scale: 1.05 }}
@@ -44,7 +44,7 @@ const Links: React.FC<LinkType> = ({ IconComponent, color, text, link }) => {
         initial="hidden"
         animate="visible"
         exit="exit"
-        className="flex justify-center items-center px-3 py-2 sm:p-3 bg-slate-200 rounded-lg w-full h-full text-lg sm:text-lg"
+        className="flex justify-center items-center px-3 py-2 sm:p-3 lg:py-5 bg-slate-200 rounded-lg w-full h-full text-lg sm:text-lg"
       >
         <IconComponent
           className={`w-[25px] h-[25px] sm:w-[40px] sm:h-[40px] lg:w-[50px] lg:h-[30px] min-w-[10px] min-h-[10px] ${color}`}

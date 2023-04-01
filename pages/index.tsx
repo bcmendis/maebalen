@@ -2,6 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import { motion as m } from "framer-motion";
+import Hero from "@/components/Hero";
 const badass = require("../assets/Headshot_Badass.jpg");
 const sweet = require("../assets/Headshot_Sweet.jpg");
 const edgy = require("../assets/Headshot_Edgy.jpg");
@@ -17,11 +18,11 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="flex flex-col justify-center items-center py-20 h-screen w-screen">
-        <Link href="/links" className="flex p-4 text-white">
+      <main className="flex flex-col w-full h-full items-center justify-start text-black overflow-auto">
+        <Link href="/links" className="flex p-4 text-white bg-blue-500">
           Links
         </Link>
-        <div className="h-full flex rounded-lg overflow-x-hidden shadow-xl shadow-gray-800">
+        {/* <div className="h-full flex rounded-lg overflow-x-hidden shadow-xl shadow-gray-800">
           {headshots.map((photo, index) => {
             return (
               <m.div key={index} className="flex ">
@@ -34,7 +35,9 @@ export default function Home() {
               </m.div>
             );
           })}
-        </div>
+        </div> */}
+        <Hero />
+        <div className="flex p-4 text-white bg-transparent h-[2000px]"></div>
       </main>
     </>
   );
